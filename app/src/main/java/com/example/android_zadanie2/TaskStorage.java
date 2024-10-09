@@ -20,10 +20,20 @@ public class TaskStorage {
         tasks = new ArrayList<>();
         for(int i=1; i<=150; i++) {
             Task task = new Task();
-            task.setName("Pilne zadanie numer " + i);
-            task.setDone(i%3 == 0);
+            task.setName("Zadanie " + i);
+            if(i%3 == 0){
+                task.setCategory(Category.STUDIA);
+                task.setDone(true);
+            } else {
+                task.setCategory(Category.DOM);
+                task.setDone(false);
+            }
             tasks.add(task);
         }
+    }
+
+    public void addTask(Task task){
+        tasks.add(task);
     }
 
     public Task getTask(UUID taskId) {

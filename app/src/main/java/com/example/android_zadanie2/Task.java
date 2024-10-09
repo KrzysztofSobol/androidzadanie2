@@ -5,6 +5,7 @@ import java.util.UUID;
 
 public class Task {
     private UUID id;
+    private Category category;
     private String name;
     private Date date;
     private boolean done;
@@ -12,6 +13,7 @@ public class Task {
     public Task() {
         id = UUID.randomUUID();
         date = new Date();
+        category = Category.DOM;
     }
 
     public UUID getId() {
@@ -46,4 +48,11 @@ public class Task {
         this.done = done;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }
