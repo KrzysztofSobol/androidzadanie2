@@ -16,21 +16,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/checkbox" />
+            android:text="@string/checkbox"/>
 
         <TextView
             android:id="@+id/task_item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="task_item_name" />
+            android:text="task_item_name"
+            style="@style/CustomTaskItemNameStyle"/>
+
 
         <TextView
             android:id="@+id/task_item_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="task_item_date" />
+            android:text="task_item_date"
+            style="@style/CustomDateViewStyle"/>
 
         <ImageView
             android:id="@+id/imageView"
@@ -38,7 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@android:drawable/btn_star"
-            tools:srcCompat="@drawable/ic_dom" />
+            tools:srcCompat="@drawable/ic_dom"
+            style="@style/CustomImageViewStyle"/>
     </LinearLayout>
 
 </LinearLayout>

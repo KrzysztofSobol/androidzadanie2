@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class TaskListFragment extends Fragment {
@@ -105,11 +106,13 @@ public class TaskListFragment extends Fragment {
         public void bind(Task task) {
             this.task = task;
             String taskName = task.getName();
-            if (taskName.length() > 11) {
-                taskName = taskName.substring(0, 6) + "...";
+            if (taskName.length() > 18) {
+                taskName = taskName.substring(0, 17) + "...";
             }
             nameTextView.setText(taskName);
-            dateTextView.setText(task.getDate().toString());
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+            String formattedDate = dateFormat.format(task.getDate());
+            dateTextView.setText(formattedDate);
             checkBoxView.setChecked(task.isDone());
 
             if (task.getCategory().equals(Category.DOM)) {
